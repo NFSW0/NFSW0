@@ -1,105 +1,199 @@
-<!DOCTYPE html> <!-- 声明文档类型 -->
-<html lang="en"> <!-- 指定语言为英语 -->
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
-    <!-- 指定字符编码为UTF-8 -->
+    <!-- 设置文档的字符编码和视口 -->
     <meta charset="UTF-8">
-    <!-- 指定视图窗口的宽度和缩放比例 -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- 设置网站图标 -->
-    <link rel="icon" href="./assets/Art/image/图标3(16px).ico" type="image/x-icon">
     <!-- 网页标题 -->
-    <title>顾霖轩的个人网站</title>
-    <!-- 引入Bootstrap样式表 -->
-    <link rel="stylesheet" href="./assets/bootstrap/css/bootstrap.min.css">
-    <!-- 引入Bootstrap JavaScript库 -->
-    <script src="./assets/bootstrap/js/bootstrap.min.js"></script>
-    <!-- 引入Vue JavaScript库 -->
-    <script src="./assets/JS/vue.min.js"></script>
-    <!-- 引入自定义样式表 -->
-    <link rel="stylesheet" href="./assets/css/index.css">
+    <title>Homework01</title>
+    <!-- CSS样式 -->
+    <style>
+        /* 全局样式 */
+        body {
+            background-color: #111;
+            /* 背景颜色为黑色 */
+            color: #ddd;
+            /* 文字颜色为浅灰色 */
+            font-family: Arial, sans-serif;
+            /* 使用Arial字体，如果不可用则使用sans-serif字体 */
+            margin: 0;
+            /* 去除页面默认的外边距 */
+            padding: 0;
+            /* 去除页面默认的内边距 */
+        }
+
+        /* 页眉样式 */
+        header {
+            background-color: #333;
+            /* 背景颜色为深灰色 */
+            padding: 10px;
+            /* 内边距 */
+            position: sticky;
+            /* 设置为粘性定位，随页面滚动而固定在顶部 */
+            top: 0;
+            /* 距离顶部的距离为0 */
+            z-index: 100;
+            /* 设置堆叠顺序，保证在顶部 */
+        }
+
+        /* 外部容器样式 */
+        .container {
+            display: flex;
+            /* 使用flex布局 */
+            height: 100vh;
+            /* 设置高度为视口高度，以填充整个屏幕 */
+        }
+
+        /* 导航栏样式 */
+        nav {
+            background-color: #222;
+            /* 背景颜色为深灰色 */
+            padding: 15px;
+            /* 内边距 */
+            box-sizing: border-box;
+            /* 盒模型设置为边框盒模型，包含边框和内边距在内的宽度设置为固定宽度 */
+            height: 100%;
+            /* 高度占满容器 */
+            position: sticky;
+            /* 设置为粘性定位，随页面滚动而固定在顶部 */
+            top: 0;
+            /* 距离顶部的距离为0 */
+        }
+
+        /* 导航链接样式 */
+        nav ul {
+            list-style-type: none;
+            /* 去除列表样式 */
+            padding: 0;
+            /* 去除内边距 */
+        }
+
+        nav ul li {
+            margin-bottom: 10px;
+            /* 底部外边距 */
+        }
+
+        /* 导航链接块状样式 */
+        nav ul li a {
+            display: block;
+            /* 设置为块状元素 */
+            padding: 8px;
+            /* 内边距 */
+            text-decoration: none;
+            /* 去除下划线 */
+            color: #fff;
+            /* 文字颜色为白色 */
+            border-radius: 5px;
+            /* 圆角边框 */
+            transition: background-color 0.3s ease;
+            /* 添加过渡效果，平滑改变背景颜色 */
+        }
+
+        /* 鼠标悬停时改变背景颜色 */
+        nav ul li a:hover {
+            background-color: #444;
+        }
+
+        /* 主要内容区样式 */
+        .content {
+            flex: 1;
+            /* 自动填充剩余空间 */
+            overflow-y: auto;
+            /* 纵向滚动条 */
+            padding: 15px;
+            /* 内边距 */
+            box-sizing: border-box;
+            /* 盒模型设置为边框盒模型 */
+        }
+
+        /* 页脚样式 */
+        footer {
+            text-align: center;
+            /* 文本居中 */
+            padding: 10px;
+            /* 内边距 */
+            background-color: #333;
+            /* 背景颜色为深灰色 */
+            color: #888;
+            /* 文字颜色为浅灰色 */
+        }
+    </style>
 </head>
 
 <body>
-    <!-- Vue实例挂载点 -->
-    <div id="app">
-        <div class="main_background">
-            <!-- 网页背景视频 -->
-            <video id="video_background" class="d-none d-md-block" id="main_background" autoplay loop muted
-                poster="./assets/Art/image/元气-唯美科幻宇宙星球星空.jpg">
-                <!-- 网页背景视频源文件 -->
-                <source src="./assets/Art/video/元气-唯美科幻宇宙星球星空.mp4">
-            </video>
-        </div>
-        <!-- 网页顶部导航栏 -->
-        <nav class="navbar fixed-top navbar-expand-md top_nav">
-            <div class="container-fluid">
-                <!-- 导航栏左侧LOGO -->
-                <img class="navbar-brand" src="./assets/Art/image/顾霖轩.png" alt="LOGO">
-                <button style="background-color: #c6baa9;" class="navbar-toggler" type="button"
-                    data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
-                    <!-- 导航栏切换按钮 -->
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <!-- 离屏导航栏 -->
-                <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar"
-                    aria-labelledby="offcanvasNavbarLabel">
-                    <div class="offcanvas-header">
-                        <!-- 离屏导航栏标题 -->
-                        <h5 class="offcanvas-title" id="offcanvasNavbarLabel">导航栏</h5>
-                        <!-- 关闭离屏导航栏按钮 -->
-                        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-                    </div>
-                    <div class="offcanvas-body">
-                        <ul class="navbar-nav justify-content-end flex-grow-1">
-                            <li class="nav-item" v-for="(page,index) in pageArray">
-                                <a class="nav-link" aria-current="page" href="#"
-                                    @click="pagesChanged(index)">{{page.name}}</a>
-                            </li>
-                            <li class="nav-item" style="flex: 1;"></li>
-                            <li class="nav-item" style="border-left: 1px solid #fff;">
-                                <a class="nav-link" aria-current="page" href="./Personal-Resum.html" target="_blank"
-                                    style="color: #fff;font-weight: 100;cursor: alias;">个人简历↗</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
+    <!-- 外部容器 -->
+    <div class="container">
+        <!-- 导航栏 -->
+        <nav>
+            <ul>
+                <!-- 导航链接 -->
+                <li><a href="#section1">Section 1</a></li>
+                <li><a href="#section2">Section 2</a></li>
+                <li><a href="#section3">Section 3</a></li>
+                <!-- 可以添加更多导航链接 -->
+            </ul>
         </nav>
-        <div class="box_left">
-            <div class="my-profile-photo text-center"><img width="100px" height="100px" src="./assets/Art/image/图标3.png"
-                    alt="0.0"></div>
-            <div class="list-group-group mt-2 mb-2">
-                <div class="list-group">
-                    <button type="button" class="list-group-item list-group-item-action"
-                        @click="background_click(true)">背景:
-                        <span :style="background_button_span_style">{{background?"开":"关"}}</span></button>
-                    <button type="button" class="list-group-item list-group-item-action"
-                        @click="background_click(false)">背景音乐: <span
-                            :style="background_music_button_span_style">{{background_music?"开":"关"}}</span></button>
-                </div>
-                <hr style="margin: 1px;">
-                <div class="list-group">
-                    <button type="button" class="list-group-item list-group-item-action" style="color: #990000;">Godot
-                        游戏项目</button>
-                    <button type="button" class="list-group-item list-group-item-action" disabled
-                        style="padding: 0;">所有内容均不参与盈利，若有侵权请联系我删除<br>(邮箱：<br>2495802072@qq.com)</button>
-                </div>
-            </div>
+
+        <!-- 主要内容区 -->
+        <div class="content">
+            <!-- 第一个内容区块 -->
+            <section id="section1">
+                <h2>Section 1</h2>
+                <p>Your content goes here.</p>
+            </section>
+
+            <!-- 第二个内容区块 -->
+            <section id="section2">
+                <h2>Section 2</h2>
+                <p>Your content goes here.</p>
+            </section>
+
+            <!-- 第三个内容区块 -->
+            <section id="section3">
+                <h2>Section 3</h2>
+                <p>Your content goes here.</p>
+            </section>
+
+            <!-- 第四个内容区块 -->
+            <section id="section4">
+                <h2>Section 4</h2>
+                <p>Your content goes here.</p>
+            </section>
+
+            <!-- 第五个内容区块 -->
+            <section id="section5">
+                <h2>Section 5</h2>
+                <p>Your content goes here.</p>
+            </section>
+
+            <!-- 第六个内容区块 -->
+            <section id="section6">
+                <h2>Section 6</h2>
+                <p>Your content goes here.</p>
+            </section>
+
+            <!-- 第七个内容区块 -->
+            <section id="section7">
+                <h2>Section 7</h2>
+                <p>Your content goes here.</p>
+            </section>
+
+            <!-- 第八个内容区块 -->
+            <section id="section8">
+                <h2>Section 8</h2>
+                <p>Your content goes here.</p>
+            </section>
+
+            <!-- 第九个内容区块 -->
+            <section id="section9">
+                <h2>Section 9</h2>
+                <p>Your content goes here.</p>
+            </section>
+
+            <!-- 可以添加更多内容区块 -->
         </div>
-        <audio autoplay :src="musicList[musicCurrentIndex].link" id="BGaudio"></audio>
-        <transition name="page-fade">
-            <component v-bind:is="displayPage" :music-list="musicList" :music-current-index="musicCurrentIndex"
-                @musicindex="ichange"></component>
-        </transition>
-        <footer></footer>
     </div>
-    <script src="./assets/js/index.js"></script>
-    <script defer>
-        document.addEventListener('DOMContentLoaded', function () {
-            document.getElementById("BGaudio").muted = true;
-        });
-    </script>
 </body>
 
 </html>
