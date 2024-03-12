@@ -1,199 +1,139 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <!-- 设置文档的字符编码和视口 -->
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- 网页标题 -->
-    <title>Homework01</title>
-    <!-- CSS样式 -->
+    <title>广告推广软文页面</title>
+    <link rel="stylesheet" href="css\font-awesome.min.css">
     <style>
-        /* 全局样式 */
-        body {
-            background-color: #111;
-            /* 背景颜色为黑色 */
-            color: #ddd;
-            /* 文字颜色为浅灰色 */
-            font-family: Arial, sans-serif;
-            /* 使用Arial字体，如果不可用则使用sans-serif字体 */
+        html {
             margin: 0;
-            /* 去除页面默认的外边距 */
+            background: linear-gradient(to right, #1e1e1e, #4c4c4c); /* 暗色背景 */
+            color: #fff; /* 白色文字 */
+        }
+        body {
+            margin: 0;
             padding: 0;
-            /* 去除页面默认的内边距 */
         }
-
-        /* 页眉样式 */
-        header {
-            background-color: #333;
-            /* 背景颜色为深灰色 */
-            padding: 10px;
-            /* 内边距 */
-            position: sticky;
-            /* 设置为粘性定位，随页面滚动而固定在顶部 */
-            top: 0;
-            /* 距离顶部的距离为0 */
-            z-index: 100;
-            /* 设置堆叠顺序，保证在顶部 */
-        }
-
-        /* 外部容器样式 */
-        .container {
-            display: flex;
-            /* 使用flex布局 */
-            height: 100vh;
-            /* 设置高度为视口高度，以填充整个屏幕 */
-        }
-
-        /* 导航栏样式 */
-        nav {
-            background-color: #222;
-            /* 背景颜色为深灰色 */
-            padding: 15px;
-            /* 内边距 */
-            box-sizing: border-box;
-            /* 盒模型设置为边框盒模型，包含边框和内边距在内的宽度设置为固定宽度 */
-            height: 100%;
-            /* 高度占满容器 */
-            position: sticky;
-            /* 设置为粘性定位，随页面滚动而固定在顶部 */
-            top: 0;
-            /* 距离顶部的距离为0 */
-        }
-
-        /* 导航链接样式 */
-        nav ul {
-            list-style-type: none;
-            /* 去除列表样式 */
-            padding: 0;
-            /* 去除内边距 */
-        }
-
-        nav ul li {
-            margin-bottom: 10px;
-            /* 底部外边距 */
-        }
-
-        /* 导航链接块状样式 */
-        nav ul li a {
-            display: block;
-            /* 设置为块状元素 */
-            padding: 8px;
-            /* 内边距 */
-            text-decoration: none;
-            /* 去除下划线 */
-            color: #fff;
-            /* 文字颜色为白色 */
-            border-radius: 5px;
-            /* 圆角边框 */
-            transition: background-color 0.3s ease;
-            /* 添加过渡效果，平滑改变背景颜色 */
-        }
-
-        /* 鼠标悬停时改变背景颜色 */
-        nav ul li a:hover {
-            background-color: #444;
-        }
-
-        /* 主要内容区样式 */
-        .content {
-            flex: 1;
-            /* 自动填充剩余空间 */
-            overflow-y: auto;
-            /* 纵向滚动条 */
-            padding: 15px;
-            /* 内边距 */
-            box-sizing: border-box;
-            /* 盒模型设置为边框盒模型 */
-        }
-
-        /* 页脚样式 */
-        footer {
+        header h1 {
             text-align: center;
-            /* 文本居中 */
+            margin-top: 75px;
+            font-size: 40px;
+            font-family: "myfont";
+            text-shadow: 5px 5px 5px #000; /* 细微的黑色文字阴影 */
+        }
+        @font-face {
+            font-family: "myfont";
+            src: url(fonts/书法.ttf);
+        }
+        section {
+            margin-top: 20px;
+            width: 100%;
+            text-align: center;
+        }
+        section ul {
+            display: flex;
+            justify-content: center; /* 水平居中对齐 */
+            align-items: center; /* 垂直居中对齐 */
+            flex-wrap: wrap;
+            padding: 0;
+            margin: 0;
+        }
+        section ul li {
+            box-sizing: border-box;
+            width: 400px;
             padding: 10px;
-            /* 内边距 */
-            background-color: #333;
-            /* 背景颜色为深灰色 */
-            color: #888;
-            /* 文字颜色为浅灰色 */
+            overflow: hidden;
+            list-style: none;
+            line-height: 30px;
+            background: linear-gradient(to right, #333333, #666666); /* 暗色渐变背景 */
+            border-radius: 10px;
+            margin: 10px;
+        }
+        section ul li a {
+            color: #fff;
+            text-decoration: none;
+        }
+        section ul li a:hover {
+            color: #d2691e; /* 橙色 */
+            text-decoration: underline;
+        }
+        section ul li a:visited {
+            color: #fff;
+            text-decoration: none;
+        }
+        footer {
+            margin-top: 20px;
+            text-align: center;
+            width: 100%;
+        }
+        footer ul {
+            display: flex;
+            justify-content: center; /* 水平居中对齐 */
+            align-items: center; /* 垂直居中对齐 */
+            flex-wrap: wrap;
+            padding: 0;
+            margin: 0;
+        }
+        footer ul li {
+            width: 200px;
+            padding: 10px;
+            box-sizing: border-box;
+            list-style: none;
+            background: linear-gradient(to right, #333333, #666666); /* 暗色渐变背景 */
+            border-radius: 10px;
+            margin: 10px;
+        }
+        ul {
+            margin: 0;
+            padding: 0;
+        }
+        i,a {
+            display: block;
         }
     </style>
 </head>
-
 <body>
-    <!-- 外部容器 -->
-    <div class="container">
-        <!-- 导航栏 -->
-        <nav>
-            <ul>
-                <!-- 导航链接 -->
-                <li><a href="#section1">Section 1</a></li>
-                <li><a href="#section2">Section 2</a></li>
-                <li><a href="#section3">Section 3</a></li>
-                <!-- 可以添加更多导航链接 -->
-            </ul>
-        </nav>
-
-        <!-- 主要内容区 -->
-        <div class="content">
-            <!-- 第一个内容区块 -->
-            <section id="section1">
-                <h2>Section 1</h2>
-                <p>Your content goes here.</p>
-            </section>
-
-            <!-- 第二个内容区块 -->
-            <section id="section2">
-                <h2>Section 2</h2>
-                <p>Your content goes here.</p>
-            </section>
-
-            <!-- 第三个内容区块 -->
-            <section id="section3">
-                <h2>Section 3</h2>
-                <p>Your content goes here.</p>
-            </section>
-
-            <!-- 第四个内容区块 -->
-            <section id="section4">
-                <h2>Section 4</h2>
-                <p>Your content goes here.</p>
-            </section>
-
-            <!-- 第五个内容区块 -->
-            <section id="section5">
-                <h2>Section 5</h2>
-                <p>Your content goes here.</p>
-            </section>
-
-            <!-- 第六个内容区块 -->
-            <section id="section6">
-                <h2>Section 6</h2>
-                <p>Your content goes here.</p>
-            </section>
-
-            <!-- 第七个内容区块 -->
-            <section id="section7">
-                <h2>Section 7</h2>
-                <p>Your content goes here.</p>
-            </section>
-
-            <!-- 第八个内容区块 -->
-            <section id="section8">
-                <h2>Section 8</h2>
-                <p>Your content goes here.</p>
-            </section>
-
-            <!-- 第九个内容区块 -->
-            <section id="section9">
-                <h2>Section 9</h2>
-                <p>Your content goes here.</p>
-            </section>
-
-            <!-- 可以添加更多内容区块 -->
-        </div>
-    </div>
+<header>
+    <h1>
+        <i id="cursor" class="fa fa-heart fa-spin"></i>
+        万物互联
+    </h1>
+</header>
+<section>
+    <h2>HTML5+CSS3</h2>
+    <ul>
+        <li>
+            <i class="fa fa-html5 fa-5x"></i>
+            <p>HTML5HTML5HTML5HTML5HTML5HTML5HTML5HTML5</p>
+        </li>
+        <li>
+            <i class="fa fa-css3 fa-5x"></i>
+            <p>CSS3CSS3CSS3CSS3CSS3CSS3CSS3CSS3CSS3CSS3</p>
+        </li>
+    </ul>
+</section>
+<footer>
+    <h2>平台支持</h2>
+    <ul>
+        <li>
+            <i class="fa fa-apple fa-5x"></i>
+            <a href="#">原生移动APP开发</a>
+        </li>
+        <li>
+            <i class="fa fa-weixin fa-5x"></i>
+            <a href="#">微信公共平台开发</a>
+        </li>
+        <li>
+            <i class="fa fa-desktop fa-5x"></i>
+            <a href="#">网站开发</a>
+        </li>
+        <li>
+            <i class="fa fa-laptop fa-5x"></i>
+            <a href="#">桌面应用开发</a>
+        </li>
+    </ul>
+</footer>
 </body>
-
 </html>
