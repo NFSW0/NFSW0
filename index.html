@@ -1,139 +1,76 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>广告推广软文页面</title>
-    <link rel="stylesheet" href="css\font-awesome.min.css">
+    <title>夜林空间站</title>
     <style>
-        html {
-            margin: 0;
-            background: linear-gradient(to right, #1e1e1e, #4c4c4c); /* 暗色背景 */
-            color: #fff; /* 白色文字 */
-        }
         body {
             margin: 0;
             padding: 0;
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(to right, #000046, #1cb5e0); /* 深蓝色渐变背景 */
+            color: white;
         }
-        header h1 {
+        header {
+            padding: 10px 20px;
             text-align: center;
-            margin-top: 75px;
-            font-size: 40px;
-            font-family: "myfont";
-            text-shadow: 5px 5px 5px #000; /* 细微的黑色文字阴影 */
+            background: rgba(0, 0, 70, 0.85); /* 导航栏半透明背景 */
         }
-        @font-face {
-            font-family: "myfont";
-            src: url(fonts/书法.ttf);
-        }
-        section {
-            margin-top: 20px;
-            width: 100%;
-            text-align: center;
-        }
-        section ul {
-            display: flex;
-            justify-content: center; /* 水平居中对齐 */
-            align-items: center; /* 垂直居中对齐 */
-            flex-wrap: wrap;
-            padding: 0;
-            margin: 0;
-        }
-        section ul li {
-            box-sizing: border-box;
-            width: 400px;
-            padding: 10px;
-            overflow: hidden;
-            list-style: none;
-            line-height: 30px;
-            background: linear-gradient(to right, #333333, #666666); /* 暗色渐变背景 */
-            border-radius: 10px;
-            margin: 10px;
-        }
-        section ul li a {
-            color: #fff;
+        nav a {
+            color: white;
             text-decoration: none;
+            padding: 10px 15px;
+            margin: 0 10px;
         }
-        section ul li a:hover {
-            color: #d2691e; /* 橙色 */
-            text-decoration: underline;
+        nav a:hover {
+            background-color: rgba(255, 255, 255, 0.1);
         }
-        section ul li a:visited {
-            color: #fff;
-            text-decoration: none;
+        #projects {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            padding: 20px;
+        }
+        .project {
+            background: rgba(0, 0, 50, 0.8);
+            padding: 15px;
+            border-radius: 8px;
+            transition: transform 0.3s;
+        }
+        .project:hover {
+            transform: translateY(-5px);
         }
         footer {
-            margin-top: 20px;
             text-align: center;
-            width: 100%;
-        }
-        footer ul {
-            display: flex;
-            justify-content: center; /* 水平居中对齐 */
-            align-items: center; /* 垂直居中对齐 */
-            flex-wrap: wrap;
-            padding: 0;
-            margin: 0;
-        }
-        footer ul li {
-            width: 200px;
             padding: 10px;
-            box-sizing: border-box;
-            list-style: none;
-            background: linear-gradient(to right, #333333, #666666); /* 暗色渐变背景 */
-            border-radius: 10px;
-            margin: 10px;
-        }
-        ul {
-            margin: 0;
-            padding: 0;
-        }
-        i,a {
-            display: block;
+            background: rgba(0, 0, 70, 0.9);
         }
     </style>
 </head>
 <body>
-<header>
-    <h1>
-        <i id="cursor" class="fa fa-heart fa-spin"></i>
-        万物互联
-    </h1>
-</header>
-<section>
-    <h2>HTML5+CSS3</h2>
-    <ul>
-        <li>
-            <i class="fa fa-html5 fa-5x"></i>
-            <p>HTML5HTML5HTML5HTML5HTML5HTML5HTML5HTML5</p>
-        </li>
-        <li>
-            <i class="fa fa-css3 fa-5x"></i>
-            <p>CSS3CSS3CSS3CSS3CSS3CSS3CSS3CSS3CSS3CSS3</p>
-        </li>
-    </ul>
-</section>
-<footer>
-    <h2>平台支持</h2>
-    <ul>
-        <li>
-            <i class="fa fa-apple fa-5x"></i>
-            <a href="#">原生移动APP开发</a>
-        </li>
-        <li>
-            <i class="fa fa-weixin fa-5x"></i>
-            <a href="#">微信公共平台开发</a>
-        </li>
-        <li>
-            <i class="fa fa-desktop fa-5x"></i>
-            <a href="#">网站开发</a>
-        </li>
-        <li>
-            <i class="fa fa-laptop fa-5x"></i>
-            <a href="#">桌面应用开发</a>
-        </li>
-    </ul>
-</footer>
+    <header>
+        <nav>
+            <a href="#projects">项目</a>
+            <a href="#about">关于我</a>
+            <a href="#contact">联系方式</a>
+        </nav>
+    </header>
+
+    <div id="projects">
+        <div class="project">
+            <h3>项目1</h3>
+            <p>项目1的简要描述。</p>
+        </div>
+        <div class="project">
+            <h3>项目2</h3>
+            <p>项目2的简要描述。</p>
+        </div>
+        <!-- 更多项目 -->
+    </div>
+
+    <footer>
+        <p>版权所有 © 夜林</p>
+    </footer>
 </body>
 </html>
