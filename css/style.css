@@ -24,7 +24,6 @@ body::-webkit-scrollbar-thumb:hover {
 
 .container {
     display: flex;
-    /*height: 80%;*/
     padding: 20px;
 }
 
@@ -34,7 +33,7 @@ body::-webkit-scrollbar-thumb:hover {
     max-height: 400px;
     background-color: #323a45; /* 深蓝色背景 */
     padding: 20px;
-    margin-right: 20px;
+    margin: 20px;
     border-radius: 5px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
     align-items: center;
@@ -51,6 +50,7 @@ body::-webkit-scrollbar-thumb:hover {
 .projects {
     flex: 2;
     background-color: #39424e; /* 深蓝灰色 */
+    margin: 20px;
     padding: 20px;
     border-radius: 5px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
@@ -89,7 +89,6 @@ body::-webkit-scrollbar-thumb:hover {
 .empty {
     flex: 1;
     max-width: 300px;
-
 }
 
 nav {
@@ -119,4 +118,35 @@ footer {
     text-align: center;
     padding: 10px;
     background: #20262d; /* 深蓝黑色 */
+}
+
+/* 移动端样式 */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        margin: 0;
+    }
+
+    .card, .projects, .empty {
+        max-width: 100%;
+    }
+
+    .profile-img {
+        width: 50%;
+        margin-bottom: 10px;
+    }
+
+    nav {
+        display: block; /* 在移动端显示 */
+    }
+
+    nav ul li {
+        display: block; /* 在移动端改为块状元素 */
+        margin-bottom: 10px;
+    }
+
+    .card {
+        flex-direction: column; /* 改为列排列 */
+        height: auto; /* 自动高度 */
+    }
 }
