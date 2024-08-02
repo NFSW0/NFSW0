@@ -1,0 +1,50 @@
+.top_nav {
+    display: flex;
+    align-items: center;
+    background-color: #323a45;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+.logo {
+    margin: 10px;
+}
+
+.menu {
+    flex: 1;
+    display: flex;
+}
+
+.menu ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.menu li {
+    display: inline-block;
+}
+
+.menu a {
+    text-decoration: none;
+    color: white;
+    display: block;
+    padding: 0.5rem 1rem;
+}
+
+.menu a:hover {
+    background-color: #555;
+}
+
+.links {
+    flex: 1;
+}
+
+@media screen and (max-width: 768px) {
+    .logo {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 480px) {
+
+}
